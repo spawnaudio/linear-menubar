@@ -1,0 +1,295 @@
+:root {
+  color-scheme: dark;
+  --bg: #14151a;
+  --bg-elev: #1c1e26;
+  --bg-elev-2: #23262f;
+  --border: #2c2f3a;
+  --text: #e8e9ed;
+  --text-dim: #9aa0ad;
+  --accent: #5e6ad2;
+  --accent-hover: #6b78e6;
+  --running: #34d399;
+  --urgent: #f87171;
+  --high: #fbbf24;
+  --medium: #60a5fa;
+  --low: #9aa0ad;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: transparent;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.app {
+  width: 360px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--text);
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--accent), #8b5cf6);
+  box-shadow: 0 4px 12px rgba(94, 106, 210, 0.5);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.app-header p {
+  margin: 2px 0 0;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.badge-live {
+  color: var(--running);
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.timer-panel {
+  padding: 22px 16px 18px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.clock {
+  font-size: 52px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.clock-running {
+  color: var(--running);
+}
+
+.clock-caption {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.clock-caption strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-dim);
+}
+
+.dot[data-running="true"] {
+  background: var(--running);
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.18);
+}
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn {
+  flex: 1;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.12s ease, transform 0.06s ease, opacity 0.12s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: #2b2e39;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: transparent;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.issues-header {
+  padding: 14px 16px 6px;
+}
+
+.issues-header h2 {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+}
+
+.issue-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 8px 10px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.issue {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  padding: 10px 10px;
+  margin: 2px 0;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.issue:hover {
+  background: var(--bg-elev);
+}
+
+.issue-selected {
+  background: var(--bg-elev);
+  border-color: rgba(94, 106, 210, 0.6);
+}
+
+.issue-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.issue-id {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.02em;
+}
+
+.issue-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.issue-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.issue-total {
+  color: var(--accent-hover);
+}
+
+.prio {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.prio-urgent {
+  color: var(--urgent);
+  background: rgba(248, 113, 113, 0.14);
+}
+
+.prio-high {
+  color: var(--high);
+  background: rgba(251, 191, 36, 0.14);
+}
+
+.prio-medium {
+  color: var(--medium);
+  background: rgba(96, 165, 250, 0.14);
+}
+
+.prio-low {
+  color: var(--low);
+  background: rgba(154, 160, 173, 0.14);
+}
+
+.empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 13px;
+}

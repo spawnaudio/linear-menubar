@@ -75,3 +75,7 @@ The app also includes an isolated native UI smoke test. It creates sample sessio
 - `scripts/build-app.sh`: local macOS app packaging.
 
 References: [Locu](https://locu.app), [DeskMinder](https://deskminder.appps.od.ua), [Linear API](https://linear.app/developers/graphql), [Linear key permissions](https://linear.app/docs/api-and-webhooks).
+
+## Electron and browser prototype
+
+The repository also includes a separate Electron/React stopwatch prototype and a Cursor Cloud Agent development environment. See the [Electron setup guide](docs/ELECTRON.md) for Node.js requirements, browser preview, and Electron commands. Its timer and session storage are independent of the native macOS app.

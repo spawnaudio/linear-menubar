@@ -1,0 +1,10 @@
+{
+  "name": "linear-menubar",
+  "install": "npm install",
+  "terminals": [
+    {
+      "name": "vite-dev-server",
+      "command": "npm run dev"
+    }
+  ]
+}

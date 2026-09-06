@@ -5,3 +5,8 @@ build/
 *.xcuserstate
 .env
 .env.*
+node_modules/
+dist/
+dist-electron/
+release/
+*.log
