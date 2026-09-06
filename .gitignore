@@ -1,8 +1,12 @@
+.build/
+build/
+.swiftpm/
+.DS_Store
+*.xcuserstate
+.env
+.env.*
 node_modules/
 dist/
 dist-electron/
 release/
 *.log
-.DS_Store
-.env
-.env.local
