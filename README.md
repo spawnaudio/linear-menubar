@@ -2,6 +2,8 @@
 
 A native macOS menu bar app for focusing on one Linear issue at a time. Select an issue, set a duration, and start a small floating countdown.
 
+Linear Project: [Linear Focus - Menubar App](https://linear.app/spawn-audio/project/linear-focus-menubar-app-c8edb89ecdea/overview). Use this project for this repository’s planning, issues, and project updates.
+
 ## Use the app
 
 1. Open **Linear Focus.app** in the `build` folder after building it (instructions below).
